@@ -44,5 +44,5 @@ $partite=[
 
 for($i = 0; $i < count($partite); $i++){
     $match = $partite[$i];
-    echo "<h1> $match[casa] - $match[ospite] | $match[punti_casa] - $match[punti_ospite]</h1>";
+    echo "<h1> $match[casa] - $match[ospite] | $match[punti_casa] - $match[punti_casa]</h1>";
 }
