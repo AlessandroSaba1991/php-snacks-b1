@@ -39,5 +39,5 @@ $partite=[
 ];
 
 foreach($partite as $partita){
-    echo
+    echo "<h1> $partita[casa] - $partita[ospite] | $partita[punti_casa] - $partita[punti_ospite]";
 }
