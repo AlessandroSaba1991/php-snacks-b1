@@ -38,6 +38,11 @@ $partite=[
     ],
 ];
 
-foreach($partite as $partita){
+/* foreach($partite as $partita){
     echo "<h1> $partita[casa] - $partita[ospite] | $partita[punti_casa] - $partita[punti_ospite]";
+} */
+
+for($i = 0; $i < count($partite); $i++){
+    $match = $partite[$i];
+    echo "<h1> $match[casa] - $match[ospite] | $match[punti_casa] - $match[punti_ospite]</h1>";
 }
