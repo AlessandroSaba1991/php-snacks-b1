@@ -18,7 +18,7 @@ $text = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. In non exerci
 <body>
     <main>
         <?php foreach (explode('.', $text) as $value) : ?>
-            <p><?= $value; ?></p>
+            <p><?= $value; ?>.</p>
         <?php endforeach; ?>
     </main>
 </body>
