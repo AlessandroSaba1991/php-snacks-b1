@@ -44,10 +44,62 @@ $posts = [
 ];
 
 foreach ($posts as $data => $post) {
-    foreach ($post as $index => $value) {
+    foreach ($post as $value) {
         echo "<h1> $data </h1>";
         foreach ($value as $key => $detail) {
             echo "<p> $key:  $detail </p>";
         }
     }
 }
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post</title>
+    <style>
+        .card {
+            width: 33%;
+            padding: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <?php foreach ($posts as $data => $post) : ?>
+            <div class="card">
+
+                <div class="text">
+
+
+
+                    <?php foreach ($post as $value) : ?>
+                        <h1> <?php echo $data; ?> </h1>
+                        <?php foreach ($value as $key => $detail) : ?>
+                            <p> <?php echo $key . ": " . $detail ?> </p>
+                        <?php endforeach; ?>
+                        <img src="" alt="">
+                    <?php endforeach; ?>
+                <?php endforeach; ?>
+                </div>
+            </div>
+            <div class="card">
+
+                <div class="text">
+                    <h1></h1>
+                    <p></p>
+                </div>
+
+                <img src="" alt="">
+
+            </div>
+
+    </main>
+</body>
+
+</html>
