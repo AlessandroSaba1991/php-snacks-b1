@@ -3,7 +3,7 @@
 Creare un array di array. Ogni array figlio avrà come chiave una data in questo formato: DD-MM-YYYY es 01-01-2007 e come valore un array di post associati a quella data. Stampare ogni data con i relativi post.
 */
 
-$posts = [
+$dates = [
 
     '10/01/2019' => [
         [
@@ -43,15 +43,6 @@ $posts = [
     ],
 ];
 
-foreach ($posts as $data => $post) {
-    foreach ($post as $value) {
-        echo "<h1> $data </h1>";
-        foreach ($value as $key => $detail) {
-            echo "<p> $key:  $detail </p>";
-        }
-    }
-}
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -61,6 +52,7 @@ foreach ($posts as $data => $post) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Post</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3' crossorigin='anonymous'>
     <style>
         .card {
             width: 33%;
@@ -71,34 +63,24 @@ foreach ($posts as $data => $post) {
 
 <body>
     <main>
-        <?php foreach ($posts as $data => $post) : ?>
-            <div class="card">
+        <div class="container my-3 text-center">
+            <?php foreach ($dates as $data => $value) : ?>
+                <h1> <?php echo $data; ?> </h1>
+                <div class="row">
+                    <?php foreach ($value as $post) : ?>
+                        <div class="col">
+                            <img src="https://picsum.photos/1200/600" alt="" class="img-fluid">
 
-                <div class="text">
-
-
-
-                    <?php foreach ($post as $value) : ?>
-                        <h1> <?php echo $data; ?> </h1>
-                        <?php foreach ($value as $key => $detail) : ?>
-                            <p> <?php echo $key . ": " . $detail ?> </p>
-                        <?php endforeach; ?>
-                        <img src="" alt="">
+                            <div class="text">
+                                <small><?= $post['author']; ?></small>
+                                <h3><?= $post['title']; ?></h3>
+                                <p><?= $post['text']; ?></p>
+                            </div>
+                        </div>
                     <?php endforeach; ?>
-                <?php endforeach; ?>
                 </div>
-            </div>
-            <div class="card">
-
-                <div class="text">
-                    <h1></h1>
-                    <p></p>
-                </div>
-
-                <img src="" alt="">
-
-            </div>
-
+            <?php endforeach; ?>
+        </div>
     </main>
 </body>
 
