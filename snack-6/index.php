@@ -36,6 +36,12 @@ $db = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snack 6</title>
     <style>
+        .rectangle{
+            width: fit-content;
+            padding: 1rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
         .green {
             background-color: green;
         }
@@ -51,7 +57,7 @@ $db = [
         <?php foreach ($db as $key => $value) : ?>
             <div class="rectangle <?= $key === 'teachers' ? 'gray' : 'green' ?>">
                 <?php foreach ($value as $detail) : ?>
-                    <p><?= $detail['name'] . $detail['lastname'] ?> </p>
+                    <p><?= $detail['name'] . " " . $detail['lastname'] ?> </p>
                 <?php endforeach; ?>
             </div>
         <?php endforeach; ?>
